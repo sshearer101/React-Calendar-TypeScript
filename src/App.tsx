@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { CalendarComponent } from '@syncfusion/ej2-react-calendars';
 import './App.css';
 
 function App() {
+
+  const dateValue: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 20)
+  const startDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+  const endDate: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 31)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <CalendarComponent 
+      value={dateValue}
+      min={startDate}
+      max={endDate}
+      isMultiSelection={true}
+      start="Decade"
+      depth="Month"
+      ></CalendarComponent>
     </div>
   );
 }
